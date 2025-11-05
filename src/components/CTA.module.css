@@ -1,0 +1,149 @@
+.cta {
+  padding: 30px 0 60px;
+  background-color: var(--bg-primary);
+  color: var(--heading-color);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta::before {
+  content: '';
+  position: absolute;
+  bottom: -20%;
+  left: 50%;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(
+    circle,
+    rgba(139, 87, 255, 0.15) 0%,
+    rgba(139, 87, 255, 0) 60%
+  );
+  transform: translateX(-50%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.cta h2 {
+  font-size: 2.8em;
+  color: var(--heading-color);
+  margin-bottom: 20px;
+}
+
+.cta p {
+  font-size: 1.1em;
+  color: var(--text-color);
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ctaButtons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.storeButton {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--bg-secondary);
+  color: var(--heading-color);
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 1em;
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-glass);
+}
+
+.storeButton i {
+  font-size: 1.4em;
+  margin-right: 12px;
+}
+
+.storeButton:hover {
+  background-color: #1a2238;
+  border-color: var(--logo-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(0, 133, 255, 0.3);
+}
+
+.storeButton div {
+  text-align: left;
+  line-height: 1.2;
+  font-size: 0.9em;
+}
+
+.storeButton strong {
+  font-size: 1.2em;
+  display: block;
+}
+
+.brandRevealSimple {
+  position: relative;
+  padding: 22px 0 26px;
+  background: linear-gradient(180deg, rgba(10, 15, 30, 0.96) 0%, rgba(14, 20, 36, 0.96) 45%, var(--bg-secondary) 100%);
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.brandRevealSimple::before {
+  content: '';
+  position: absolute;
+  inset: -25% -15% 0 -15%;
+  background: radial-gradient(
+    60% 60% at 50% 0,
+    rgba(139, 87, 255, 0.28) 0%,
+    rgba(0, 133, 255, 0.12) 45%,
+    transparent 70%
+  );
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+.brandRevealSimple::after {
+  content: '';
+  position: absolute;
+  inset: auto auto 1% 50%;
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(
+    circle,
+    rgba(139, 87, 255, 0.15) 0%,
+    rgba(0, 133, 255, 0.06) 55%,
+    transparent 70%
+  );
+  transform: translateX(-50%);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.wordmark {
+  width: 70px;
+  height: auto;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .brandRevealSimple {
+    padding: 18px 0 24px;
+  }
+
+  .wordmark {
+    width: 64px;
+  }
+}

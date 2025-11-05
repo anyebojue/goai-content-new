@@ -1,0 +1,170 @@
+.problem {
+  padding: 30px 0 100px;
+  text-align: center;
+  position: relative;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.problem h2 {
+  font-size: 2.35em;
+  color: transparent;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, var(--logo-blue), var(--logo-purple));
+  -webkit-background-clip: text;
+  background-clip: text;
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.problem > .container > p {
+  font-size: 1.1em;
+  color: var(--text-muted);
+  max-width: 800px;
+  margin: 0 auto 50px auto;
+  line-height: 1.7;
+}
+
+.problemGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 260px);
+  justify-content: space-between;
+  column-gap: 48px;
+  row-gap: 56px;
+  margin: 90px auto 0;
+  position: relative;
+  padding: 0 56px;
+  max-width: 1200px;
+}
+
+.problemCard {
+  background: var(--bg-glass);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 36px 32px 48px;
+  border-radius: 16px;
+  border: 2px solid rgba(0, 133, 255, 0.6);
+  text-align: left;
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.32);
+  position: relative;
+  overflow: visible;
+  transform: translate3d(12px, -10px, 0);
+  transition: transform 260ms ease, box-shadow 280ms ease;
+  will-change: transform, box-shadow;
+}
+
+.problemCard:hover {
+  transform: translate3d(18px, -16px, 0);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.35);
+}
+
+.problemCard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+      135deg,
+      rgba(139, 87, 255, 0.18),
+      rgba(0, 133, 255, 0.12)
+    ),
+    var(--bg-glass);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+  transform: translate3d(-26px, 18px, 0) rotate(-3deg);
+  transition: transform 280ms ease, opacity 200ms ease, box-shadow 280ms ease;
+  z-index: -1;
+  will-change: transform, opacity;
+}
+
+.problemCard:hover::before {
+  transform: translate3d(-32px, 22px, 0) rotate(-4deg);
+  opacity: 0.82;
+  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.4);
+}
+
+.problemCard::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    120% 100% at 70% 30%,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(10, 15, 30, 0.05) 70%
+  );
+  mix-blend-mode: screen;
+  pointer-events: none;
+  opacity: 0.65;
+  transition: opacity 220ms ease;
+}
+
+.problemCard:hover::after {
+  opacity: 0.78;
+}
+
+.problemCard i {
+  display: block;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  color: var(--heading-color);
+  background: var(--goai-alpha-bg);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.problemCard h3 {
+  font-size: 1.25em;
+  color: var(--heading-color);
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.problemCard p {
+  font-size: 0.95em;
+  color: var(--text-color);
+  line-height: 1.6;
+  min-height: 96px;
+}
+
+@media (max-width: 1024px) {
+  .problemGrid {
+    grid-template-columns: repeat(2, minmax(0, 280px));
+    column-gap: 44px;
+    row-gap: 56px;
+    padding: 0 40px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .problem {
+    padding: 30px 0 100px;
+  }
+
+  .problem h2 {
+    font-size: 2em;
+  }
+
+  .problemGrid {
+    grid-template-columns: minmax(0, 320px);
+    row-gap: 88px;
+    column-gap: 0;
+    padding: 0 28px;
+    justify-content: center;
+  }
+
+  .problemCard {
+    transform: translate3d(10px, -6px, 0);
+  }
+
+  .problemCard::before {
+    transform: translate3d(-22px, 16px, 0) rotate(-3deg);
+  }
+}
