@@ -9,10 +9,10 @@ export default function Header() {
         <nav className={styles.headerNav}>
           <Link href="#" className={styles.logo}>
             <Image
-              src="/svg/goai-wordmark.svg"
-              alt="GoAI wordmark"
+              src="/svg/IOS-Appicon.svg"
+              alt="GoAI logo"
               width={56}
-              height={20}
+              height={56}
               className={styles.logoWordmark}
               priority
             />
