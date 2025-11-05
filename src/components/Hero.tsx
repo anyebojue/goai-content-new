@@ -41,7 +41,7 @@ export default function Hero() {
 
         <div className={styles.textOverlay}>
           <div className={styles.textColumn}>
-            <span className={styles.tag}>GOAI Alpha</span>
+            <span className={styles.tag}>GoAI Alpha</span>
             <h1>See the Opportunities Others Don&apos;t.</h1>
             <p className={styles.subtitle}>
               GoAI analyzes millions of data points to uncover bespoke,

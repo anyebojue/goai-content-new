@@ -102,8 +102,8 @@
   border: 1px solid rgba(0, 133, 255, 0.35);
   color: var(--goai-medium-text);
   font-size: 0.82em;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-transform: none;
 }
 
 .textColumn h1 {
