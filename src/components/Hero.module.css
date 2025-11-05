@@ -237,14 +237,14 @@
 
 .heroChartEdgeLeft {
   left: 0;
-  top: 36%;
+  top: 62%;
   width: clamp(560px, 50vw, 820px);
   max-width: 60vw;
 }
 
 .heroChartEdgeRight {
   right: 0;
-  top: 60%;
+  top: 28%;
   width: clamp(400px, 36vw, 520px);
   max-width: 45vw;
 }
@@ -257,12 +257,12 @@
 
   .heroChartEdgeLeft {
     width: clamp(460px, 66vw, 700px);
-    top: 42%;
+    top: 68%;
   }
 
   .heroChartEdgeRight {
     width: clamp(320px, 44vw, 480px);
-    top: 63%;
+    top: 32%;
   }
 }
 
