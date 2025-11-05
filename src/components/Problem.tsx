@@ -1,11 +1,29 @@
 import styles from './Problem.module.css';
 
 export default function Problem() {
+  const heading = 'The Market Moves Fast. Your Time and Focus are Limited.';
+  const letters = Array.from(heading);
+  const gradientSize = `${letters.length * 100}% 100%`;
+
   return (
     <section id="problem" className={styles.problem}>
       <div className={styles.container}>
-        <h2>
-          The Market Moves Fast. Your Time and Focus are Limited.
+        <h2 aria-label={heading}>
+          {letters.map((char, index) => (
+            <span
+              key={`char-${index}`}
+              className={styles.headingLetter}
+              style={{
+                backgroundImage: 'linear-gradient(90deg, var(--logo-blue), var(--logo-purple))',
+                backgroundSize: gradientSize,
+                backgroundPosition: `${
+                  letters.length > 1 ? (index / (letters.length - 1)) * 100 : 50
+                }% 0%`,
+              }}
+            >
+              {char === ' ' ? '\u00a0' : char}
+            </span>
+          ))}
         </h2>
         <p>
           By the time you read about an opportunity in the news, the real move
