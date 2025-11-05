@@ -1,0 +1,150 @@
+.chartOverlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  isolation: isolate;
+  --chart-primary: rgba(20, 185, 255, 0.95);
+  --chart-primary-glow: rgba(20, 185, 255, 0.6);
+  --chart-secondary: rgba(160, 72, 255, 0.5);
+  --chart-indicator-border: rgba(20, 185, 255, 0.35);
+  --chart-value-color: #4fd1ff;
+  --chart-meta-color: rgba(226, 232, 240, 0.65);
+  --chart-glow-a: rgba(20, 185, 255, 0.38);
+  --chart-glow-b: rgba(160, 72, 255, 0.32);
+}
+
+.chartGrid {
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background-image:
+    linear-gradient(rgba(79, 118, 255, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(79, 118, 255, 0.12) 1px, transparent 1px);
+  background-size: 100% 40px, 60px 100%;
+  opacity: 0.35;
+  mix-blend-mode: screen;
+  filter: drop-shadow(0 12px 24px rgba(12, 22, 45, 0.5));
+}
+
+.chartSvg {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  filter: drop-shadow(0 18px 35px rgba(10, 35, 75, 0.45));
+}
+
+.chartArea {
+  filter: drop-shadow(0 20px 35px rgba(14, 40, 80, 0.45));
+  opacity: 0.42;
+}
+
+.chartLinePrimary,
+.chartLineSecondary {
+  fill: none;
+  stroke-width: 3.5;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.chartLinePrimary {
+  --dash: 860;
+  stroke: var(--chart-primary);
+  filter: drop-shadow(0 0 12px var(--chart-primary-glow));
+  stroke-dasharray: var(--dash);
+  stroke-dashoffset: var(--dash);
+  animation: chartTrace 5.5s ease-in-out forwards infinite;
+}
+
+.chartLineSecondary {
+  --dash: 740;
+  stroke: var(--chart-secondary);
+  stroke-width: 2.4;
+  stroke-dasharray: var(--dash);
+  stroke-dashoffset: var(--dash);
+  animation: chartTrace 6s ease-in-out forwards infinite;
+  animation-delay: 0.6s;
+}
+
+.chartIndicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: rgba(6, 16, 32, 0.7);
+  border: 1px solid var(--chart-indicator-border);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 14px 28px rgba(10, 30, 66, 0.4);
+  text-align: center;
+}
+
+.chartValue {
+  font-size: 0.92em;
+  font-weight: 600;
+  color: var(--chart-value-color);
+  letter-spacing: 0.02em;
+}
+
+.chartMeta {
+  font-size: 0.7em;
+  color: var(--chart-meta-color);
+  letter-spacing: 0.08em;
+}
+
+.chartOverlay::after {
+  content: '';
+  position: absolute;
+  inset: -30% 40% 50% -30%;
+  background: radial-gradient(circle at 0% 0%, var(--chart-glow-a), transparent 70%);
+  filter: blur(60px);
+  opacity: 0.55;
+  transform: translate3d(0, 0, 0);
+}
+
+.chartOverlay::before {
+  content: '';
+  position: absolute;
+  inset: 30% -40% -20% 45%;
+  background: radial-gradient(circle at 100% 100%, var(--chart-glow-b), transparent 70%);
+  filter: blur(70px);
+  opacity: 0.5;
+}
+
+.chartOverlay:hover .chartIndicator {
+  transform: translate(-50%, calc(-50% - 4px));
+}
+
+@media (max-width: 640px) {
+  .chartIndicator {
+    display: none;
+  }
+}
+
+@keyframes chartTrace {
+  0% {
+    stroke-dashoffset: var(--dash);
+    opacity: 0;
+  }
+  35% {
+    opacity: 1;
+  }
+  65% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.75;
+  }
+}

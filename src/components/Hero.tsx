@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import HeroChartOverlay from './HeroChartOverlay';
 import styles from './Hero.module.css';
 
 const BACKDROP_IMAGE =
@@ -54,6 +55,12 @@ export default function Hero() {
             </div>
           </div>
         </div>
+      </div>
+      <div className={styles.heroChartEdgeLeft}>
+        <HeroChartOverlay variant="mint" />
+      </div>
+      <div className={styles.heroChartEdgeRight}>
+        <HeroChartOverlay />
       </div>
     </section>
   );
