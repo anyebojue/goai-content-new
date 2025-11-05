@@ -34,9 +34,10 @@
   transform: scale(1.05);
 }
 
-.logo svg {
+.logoWordmark {
   height: 24px;
   width: auto;
+  display: block;
 }
 
 .navCta {
