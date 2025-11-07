@@ -1,0 +1,401 @@
+/* Main wrapper */
+.main {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hero section */
+.hero {
+  position: relative;
+  min-height: calc(100vh - 60px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 20px 80px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Backdrop with gradients matching homepage */
+.backdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background: linear-gradient(120deg, rgba(8, 12, 26, 0.9), rgba(8, 18, 36, 0.7));
+}
+
+.backdrop::before {
+  content: '';
+  position: absolute;
+  inset: -12% -6% -18%;
+  pointer-events: none;
+  background: radial-gradient(
+    70% 55% at 50% -10%,
+    rgba(58, 143, 255, 0.38) 0%,
+    rgba(58, 143, 255, 0.18) 30%,
+    rgba(108, 92, 231, 0.08) 58%,
+    transparent 100%
+  );
+  filter: blur(45px);
+  transform: scale(1.05);
+  opacity: 0.6;
+}
+
+.backdrop::after {
+  content: '';
+  position: absolute;
+  inset: -45% -20% -35%;
+  background: radial-gradient(
+    60% 60% at 70% 20%,
+    rgba(139, 87, 255, 0.35),
+    transparent
+  );
+  opacity: 0.7;
+}
+
+/* Container */
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Content wrapper */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+}
+
+/* Logo group */
+.logoGroup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.festivalLogo img {
+  max-width: 360px;
+  height: auto;
+  display: block;
+}
+
+.goaiLogo img {
+  max-width: 180px;
+  height: auto;
+  display: block;
+}
+
+.divider {
+  color: rgba(226, 232, 240, 0.6);
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 1;
+  margin: 0 8px;
+}
+
+/* Chip/Tag */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: rgba(10, 133, 255, 0.12);
+  border: 1px solid rgba(0, 133, 255, 0.35);
+  color: var(--goai-medium-text, #E2E8F0);
+  font-size: 0.82em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Title */
+.title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.3;
+  font-weight: 700;
+  margin: 8px 0 4px;
+  letter-spacing: -0.02em;
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+.titleLetter {
+  display: inline-block;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-repeat: no-repeat;
+  will-change: transform;
+  transition: transform 320ms cubic-bezier(0.4, 0, 0.2, 1);
+  padding-bottom: 4px;
+}
+
+.titleLetter:hover {
+  transform: translateY(-12px);
+}
+
+/* Subtitle */
+.subtitle {
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  line-height: 1.5;
+  color: rgba(226, 232, 240, 0.82);
+  margin: -35px 0 8px;
+  max-width: 680px;
+  font-weight: 500;
+}
+
+/* Perk badge */
+.perkBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: rgba(10, 133, 255, 0.12);
+  border: 1px solid rgba(0, 133, 255, 0.35);
+  color: var(--goai-medium-text, #E2E8F0);
+  font-size: 0.82em;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  margin: 12px 0;
+  box-shadow: 0 4px 12px rgba(0, 133, 255, 0.15);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+  cursor: default;
+}
+
+.perkBadge:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 133, 255, 0.35);
+}
+
+.perkIcon {
+  font-size: 1.2em;
+}
+
+/* Form wrapper */
+.formWrapper {
+  width: 100%;
+  max-width: 560px;
+  margin-top: 32px;
+}
+
+/* Form */
+.form {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(18, 24, 43, 0.6);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  padding: 6px;
+  gap: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 200ms ease, border-color 200ms ease, transform 200ms ease;
+  width: 100%;
+}
+
+.form:focus-within {
+  border-color: rgba(0, 133, 255, 0.5);
+  box-shadow: 0 0 0 4px rgba(0, 133, 255, 0.08), 0 10px 30px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.formError {
+  border-color: rgba(255, 87, 87, 0.5) !important;
+  box-shadow: 0 0 0 4px rgba(255, 87, 87, 0.08), 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+}
+
+.emailInput {
+  padding: 14px 20px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #ffffff;
+  flex: 1;
+  font-family: 'Inter', sans-serif;
+}
+
+.emailInput::placeholder {
+  color: rgba(164, 178, 205, 0.6);
+}
+
+.emailInput:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* 覆盖浏览器自动填充样式 */
+.emailInput:-webkit-autofill,
+.emailInput:-webkit-autofill:hover,
+.emailInput:-webkit-autofill:focus,
+.emailInput:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px rgba(18, 24, 43, 0.6) inset !important;
+  -webkit-text-fill-color: #ffffff !important;
+  caret-color: #ffffff;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.joinButton {
+  padding: 14px 28px;
+  font-size: 16px;
+  background: linear-gradient(90deg, #14B9FF 0%, #004EFF 60%, #A048FF 100%);
+  border: none;
+  border-radius: 999px;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 220ms ease, box-shadow 220ms ease, opacity 220ms ease;
+  box-shadow: 0 8px 24px rgba(16, 104, 255, 0.4);
+  font-family: 'Inter', sans-serif;
+}
+
+.joinButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(16, 104, 255, 0.5);
+}
+
+.joinButton:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.joinButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Error message */
+.errorMessage {
+  margin-top: 12px;
+  padding: 10px 16px;
+  background: rgba(255, 87, 87, 0.1);
+  border: 1px solid rgba(255, 87, 87, 0.3);
+  border-radius: 12px;
+  color: #ff9999;
+  font-size: 0.9rem;
+  text-align: center;
+  animation: fadeIn 200ms ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Description */
+.description {
+  font-size: 1rem;
+  color: rgba(164, 178, 205, 0.85);
+  margin: 24px auto 0;
+  max-width: 680px;
+  line-height: 1.7;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .hero {
+    min-height: calc(100vh - 60px);
+    padding: 80px 20px 60px;
+  }
+
+  .title {
+    font-size: clamp(2rem, 8vw, 2.8rem);
+  }
+
+  .subtitle {
+    font-size: clamp(1rem, 4vw, 1.2rem);
+  }
+
+  .festivalLogo img {
+    max-width: 260px;
+  }
+
+  .goaiLogo img {
+    max-width: 140px;
+  }
+
+  .divider {
+    font-size: 36px;
+  }
+
+  .form {
+    flex-direction: column;
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .emailInput {
+    width: 100%;
+    padding: 14px 16px;
+    text-align: center;
+  }
+
+  .joinButton {
+    width: 100%;
+    padding: 14px 24px;
+  }
+
+  .perkBadge {
+    font-size: 0.9rem;
+    padding: 8px 20px;
+  }
+
+  .chip {
+    font-size: 0.75em;
+  }
+
+  .description {
+    font-size: 0.95rem;
+  }
+
+  .content {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logoGroup {
+    gap: 12px;
+  }
+
+  .festivalLogo img {
+    max-width: 200px;
+  }
+
+  .goaiLogo img {
+    max-width: 100px;
+  }
+
+  .divider {
+    font-size: 28px;
+    margin: 0 4px;
+  }
+
+  .title {
+    font-size: clamp(1.75rem, 9vw, 2.2rem);
+  }
+
+  .hero {
+    padding: 60px 16px 40px;
+  }
+}

@@ -48,6 +48,228 @@
   text-align: center;
 }
 
+.appCard.demoCard {
+  background: #ffffff;
+  border-radius: 24px;
+  border: 1px solid #eff0f4;
+  box-shadow: 0 26px 55px rgba(15, 23, 42, 0.12);
+  padding: 28px;
+  max-width: 358px;
+  margin: 0 auto;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  color: #21232e;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.demoCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.demoHeaderLeft {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.demoAvatar {
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  background: url('/images/demo-avatar.png') center/cover no-repeat;
+  flex-shrink: 0;
+}
+
+.demoIdentity {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+}
+
+.demoTicker {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  color: #0266ff;
+  background: rgba(2, 102, 255, 0.12);
+  font-weight: 600;
+}
+
+.demoSecondary {
+  margin: 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #868fa0;
+}
+
+.demoTitle {
+  margin: 4px 0 0;
+  font-size: 1.25rem;
+  color: #21232e;
+}
+
+.demoTag {
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #f4f5f7;
+  color: #1c1f27;
+  font-weight: 600;
+  font-size: 0.82rem;
+}
+
+.demoMeta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #868fa0;
+}
+
+.demoChange {
+  color: #18b45e;
+  font-weight: 600;
+}
+
+.demoPills {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.demoPills span {
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #21232e;
+  background: #f6f7f9;
+  border: 1px solid #eff0f4;
+}
+
+.demoSection {
+  border-top: 1px solid #eff0f4;
+  padding-top: 14px;
+}
+
+.demoSection:first-of-type {
+  margin-top: 0;
+}
+
+.demoSection h4 {
+  margin: 0;
+  font-size: 1rem;
+  color: #21232e;
+}
+
+.demoDrivers {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.demoDrivers li strong {
+  display: block;
+  color: #21232e;
+  margin-bottom: 4px;
+  font-size: 0.95rem;
+}
+
+.demoDrivers li p {
+  margin: 0;
+  color: #868fa0;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.demoFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #eff0f4;
+  padding-top: 18px;
+}
+
+.demoShare {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(2, 102, 255, 0.12);
+  color: #0266ff;
+  border: none;
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.demoShareIcon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(2, 102, 255, 0.1);
+}
+
+.demoMetric {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 14px;
+  border-radius: 16px;
+  border: 1px solid #eff0f4;
+  background: #fdfdff;
+}
+
+.demoMetricIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: rgba(2, 102, 255, 0.08);
+  color: #0266ff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.demoMetricValue {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #21232e;
+  line-height: 1.1;
+}
+
+.demoMetricLabel {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #868fa0;
+}
+
+.demoSvg {
+  width: 100%;
+  max-width: 358px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
 .appCard {
   background: var(--bg-glass);
   backdrop-filter: blur(10px);

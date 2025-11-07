@@ -17,54 +17,123 @@ export default function Solution() {
             </p>
           </div>
           <div className={styles.featureImage}>
-            <div className={styles.appCard}>
-              <div className={styles.appCardHeader}>
-                <div className={styles.appCardLogo}>
-                  <img src="https://logo.clearbit.com/qcom.com" alt="QCOM" />
-                </div>
-                <div className={styles.appCardInfo}>
-                  <h3 className={styles.appCardTitle}>
-                    QUALCOMM Incorporated{' '}
-                    <span style={{ fontWeight: 400, color: 'var(--text-muted)' }}>
-                      (QCOM)
-                    </span>
-                  </h3>
-                  <div className={styles.appRating}>
-                    <i className="fas fa-star"></i> 4.3{' '}
-                    <span style={{ marginLeft: '5px', color: 'var(--text-muted)' }}>
-                      Created By GoAI &bull; 12h ago
-                    </span>
+            <div className={`${styles.appCard} ${styles.demoCard}`}>
+              <div className={styles.demoCardHeader}>
+                <div className={styles.demoHeaderLeft}>
+                  <div className={styles.demoAvatar} aria-hidden />
+                  <div className={styles.demoIdentity}>
+                    <span className={styles.demoTicker}>USAR</span>
+                    <h3 className={styles.demoTitle}>US Rare Earth</h3>
                   </div>
                 </div>
-                <span className={`${styles.convictionTag} ${styles.alpha}`}>
-                  GoAI Alpha
-                </span>
+                <div className={styles.demoTag}>+ Watchlist</div>
               </div>
-              <div className={styles.keyDrivers}>
+
+              <div className={styles.demoMeta}>
+                <span>2 hours ago</span>
+                <span className={styles.demoChange}>+1.5%</span>
+              </div>
+
+              <div className={styles.demoPills}>
+                <span>Materials</span>
+                <span>Rare Earths</span>
+              </div>
+
+              <div className={styles.demoSection}>
+                <h4>Performance</h4>
+              </div>
+
+              <div className={styles.demoSection}>
                 <h4>Key Drivers</h4>
-                <ul className={styles.keyDriversList}>
+                <ul className={styles.demoDrivers}>
                   <li>
-                    <i className="fas fa-microchip"></i>
-                    <div>
-                      <strong>AI Market Expansion:</strong> Aggressive push into
-                      data center and edge AI chips.
-                    </div>
+                    <strong>Policy Support</strong>
+                    <p>
+                      Benefiting from the United States&apos; Domestic Supply policy,
+                      committed to establishing a rare-earth supply chain.
+                    </p>
                   </li>
                   <li>
-                    <i className="fas fa-chart-line"></i>
-                    <div>
-                      <strong>Valuation Upside:</strong> DCF indicates highly
-                      undervalued, low P/E vs. industry.
-                    </div>
+                    <strong>Demand Surge</strong>
+                    <p>
+                      Utilize local reserves to meet the growing demand for green
+                      energy such as electric vehicles and wind power.
+                    </p>
                   </li>
                   <li>
-                    <i className="fas fa-globe"></i>
-                    <div>
-                      <strong>Diversified Growth:</strong> Strong growth in
-                      automotive and IoT segments.
-                    </div>
+                    <strong>Market Position</strong>
+                    <p>
+                      The United States has a strong &apos;moat&apos; in domestic rare-earth
+                      extraction and magnet manufacturing.
+                    </p>
                   </li>
                 </ul>
+              </div>
+
+              <div className={styles.demoFooter}>
+                <button type="button" className={styles.demoShare}>
+                  <span className={styles.demoShareIcon} aria-hidden>
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.667 5.333 10 2m0 0H6.667M10 2v3.333"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M6.333 3.333H4.667A2.667 2.667 0 0 0 2 6v4A2.667 2.667 0 0 0 4.667 12.667h4A2.667 2.667 0 0 0 11.333 10v-1.666"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </span>
+                  Share
+                </button>
+                <div className={styles.demoMetric}>
+                  <span className={styles.demoMetricIcon} aria-hidden>
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <defs>
+                        <linearGradient id="demoDiamond" x1="0" y1="0" x2="1" y2="1">
+                          <stop offset="0%" stopColor="#0266FF" />
+                          <stop offset="100%" stopColor="#5C54FF" />
+                        </linearGradient>
+                      </defs>
+                      <path
+                        d="M10 2.5 16.5 8.5 10 17.5 3.5 8.5 10 2.5Z"
+                        fill="url(#demoDiamond)"
+                        stroke="#E5ECFF"
+                        strokeWidth="1.1"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="m3.5 8.5 6.5 3 6.5-3M10 2.5l-2 6 2 9 2-9-2-6Z"
+                        stroke="rgba(255,255,255,0.65)"
+                        strokeWidth="0.9"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </span>
+                  <div>
+                    <span className={styles.demoMetricValue}>368</span>
+                    <span className={styles.demoMetricLabel}>AI watchers</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
