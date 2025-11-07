@@ -1,10 +1,32 @@
+import type { CSSProperties } from "react";
 import styles from "./Solution.module.css";
 
 export default function Solution() {
+  const solutionHeading = "Your 24/7 AI Analyst, Distilled into 3 Feeds.";
+  const solutionHeadingLetters = Array.from(solutionHeading);
+  const solutionHeadingGradientSize = `${solutionHeadingLetters.length * 100}% 100%`;
+
   return (
     <section id="solution" className={styles.solution}>
       <div className={styles.container}>
-        <h2>Your 24/7 AI Analyst, Distilled into 3 Feeds.</h2>
+        <h2 aria-label={solutionHeading} className={styles.solutionHeading}>
+          {solutionHeadingLetters.map((char, index) => (
+            <span
+              key={`solution-heading-char-${index}`}
+              className={styles.solutionHeadingLetter}
+              style={{
+                "--gradient-size": solutionHeadingGradientSize,
+                "--letter-pos":
+                  solutionHeadingLetters.length > 1
+                    ? `${(index / (solutionHeadingLetters.length - 1)) * 100}%`
+                    : "50%",
+                "--letter-delay": `${index * 45}ms`,
+              } as CSSProperties}
+            >
+              {char === " " ? "\u00a0" : char}
+            </span>
+          ))}
+        </h2>
 
         <div className={styles.featureRow}>
           <div className={`${styles.appCard} ${styles.demoCard}`}>
@@ -165,29 +187,12 @@ export default function Solution() {
         <div className={`${styles.featureRow} ${styles.reverse}`}>
           <div className={styles.featureImage}>
             <div className={`${styles.appCard} ${styles.signalCard}`}>
-              <h3 style={{ margin: "0 0 10px 0", fontSize: "1.1em" }}>
-                VIX Volatility Index
-              </h3>
-              <div
-                style={{
-                  fontSize: "2.5em",
-                  fontWeight: 700,
-                  color: "var(--heading-color)",
-                  marginBottom: "10px",
-                }}
-              >
-                18.6
-              </div>
+              <h3 className={styles.signalCardTitle}>VIX Volatility Index</h3>
+              <div className={styles.signalValue}>18.6</div>
               <span className={`${styles.convictionTag} ${styles.medium}`}>
                 Rising Volatility
               </span>
-              <p
-                style={{
-                  fontSize: "0.9em",
-                  color: "var(--text-muted)",
-                  marginTop: "10px",
-                }}
-              >
+              <p className={styles.signalCardBody}>
                 GoAI detects increasing market uncertainty.
               </p>
             </div>
@@ -205,8 +210,8 @@ export default function Solution() {
         </div>
 
         <div className={styles.featureRow}>
-           <div className={styles.featureImage}>
-            <div className={styles.appCard}>
+          <div className={styles.featureImage}>
+            <div className={`${styles.appCard} ${styles.eventCard}`}>
               <div className={styles.appCardHeader}>
                 <div className={styles.appCardLogo}>
                   <img
@@ -217,11 +222,7 @@ export default function Solution() {
                 <div className={styles.appCardInfo}>
                   <h3 className={styles.appCardTitle}>
                     Microsoft Corp.{" "}
-                    <span
-                      style={{ fontWeight: 400, color: "var(--text-muted)" }}
-                    >
-                      (MSFT)
-                    </span>
+                    <span className={styles.appCardTicker}>(MSFT)</span>
                   </h3>
                   <p className={styles.appCardSubtitle}>Q4 Earnings Preview</p>
                 </div>
@@ -229,20 +230,11 @@ export default function Solution() {
                   Earnings Forecast
                 </span>
               </div>
-              <div
-                style={{
-                  fontSize: "1.1em",
-                  fontWeight: 600,
-                  color: "var(--heading-color)",
-                  marginBottom: "10px",
-                }}
-              >
+              <div className={styles.appCardMetric}>
                 GoAI Forecast: 80% Beat Probability
               </div>
-              <p style={{ fontSize: "0.9em", color: "var(--text-color)" }}>
-                <strong style={{ color: "var(--heading-color)" }}>
-                  Key Theme:
-                </strong>{" "}
+              <p className={styles.appCardDescription}>
+                <strong>Key Theme:</strong>{" "}
                 Strong Azure growth expected to drive upside, despite PC market
                 headwinds. Analysts are watching AI monetization closely.
               </p>

@@ -38,7 +38,6 @@
     transparent 100%
   );
   filter: blur(45px);
-  transform: scale(1.05);
   opacity: 0.6;
 }
 
