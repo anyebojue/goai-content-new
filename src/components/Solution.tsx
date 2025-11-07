@@ -18,121 +18,130 @@ export default function Solution() {
           </div>
           <div className={styles.featureImage}>
             <div className={`${styles.appCard} ${styles.demoCard}`}>
+              {/* ========== 第二部分：图片 + 文字组 + 按钮 ========== */}
               <div className={styles.demoCardHeader}>
-                <div className={styles.demoHeaderLeft}>
-                  <div className={styles.demoAvatar} aria-hidden />
-                  <div className={styles.demoIdentity}>
-                    <span className={styles.demoTicker}>USAR</span>
-                    <h3 className={styles.demoTitle}>US Rare Earth</h3>
+                {/* 图片 */}
+                <div className={styles.demoAvatar} aria-hidden />
+
+                {/* 文字组（主标题 + 副标题）*/}
+                <div className={styles.demoIdentity}>
+                  <span className={styles.demoTicker}>USAR</span>
+                  <h3 className={styles.demoTitle}>US Rare Earth</h3>
+                </div>
+
+                {/* Watchlist 按钮 */}
+                <div className={styles.demoTag}>
+                  <div className={styles.demoPlusContainer}>
+                    <img src="/svg/plus-icon.svg" width="11" height="11" alt="" />
+                  </div>
+                  <div className={styles.demoTagText}>Watchlist</div>
+                </div>
+              </div>
+
+              {/* ========== 第三部分：左侧（徽章+标签）+ 右侧（Performance）========== */}
+              <div className={styles.demoContent}>
+                {/* 左侧容器 */}
+                <div className={styles.demoLeftSection}>
+                  {/* 第一行：GoAI Alpha 徽章 + · + 时间 */}
+                  <div className={styles.demoBadgeRow}>
+                    {/* GoAI Alpha 徽章 */}
+                    <div className={styles.demoAlphaBadge}>
+                      <div className={styles.demoAlphaIcon}>
+                        <img className={styles.demoAlphaIconImg} src="/svg/diamond.svg" width="14" height="12" alt="" />
+                      </div>
+                      <div className={styles.demoAlphaText}>GoAI Alpha</div>
+                    </div>
+                    {/* 分隔符 */}
+                    <div className={styles.demoDot}>·</div>
+                    {/* 时间戳 */}
+                    <div className={styles.demoTime}>2 hours ago</div>
+                  </div>
+
+                  {/* 第二行：标签（Materials, Rare Earths）*/}
+                  <div className={styles.demoTagsRow}>
+                    <div className={styles.demoTagItem}>
+                      <div className={styles.demoTagItemText}>Materials</div>
+                    </div>
+                    <div className={styles.demoTagItem}>
+                      <div className={styles.demoTagItemText}>Rare Earths</div>
+                    </div>
                   </div>
                 </div>
-                <div className={styles.demoTag}>+ Watchlist</div>
-              </div>
 
-              <div className={styles.demoMeta}>
-                <span>2 hours ago</span>
-                <span className={styles.demoChange}>+1.5%</span>
-              </div>
-
-              <div className={styles.demoPills}>
-                <span>Materials</span>
-                <span>Rare Earths</span>
-              </div>
-
-              <div className={styles.demoSection}>
-                <h4>Performance</h4>
-              </div>
-
-              <div className={styles.demoSection}>
-                <h4>Key Drivers</h4>
-                <ul className={styles.demoDrivers}>
-                  <li>
-                    <strong>Policy Support</strong>
-                    <p>
-                      Benefiting from the United States&apos; Domestic Supply policy,
-                      committed to establishing a rare-earth supply chain.
-                    </p>
-                  </li>
-                  <li>
-                    <strong>Demand Surge</strong>
-                    <p>
-                      Utilize local reserves to meet the growing demand for green
-                      energy such as electric vehicles and wind power.
-                    </p>
-                  </li>
-                  <li>
-                    <strong>Market Position</strong>
-                    <p>
-                      The United States has a strong &apos;moat&apos; in domestic rare-earth
-                      extraction and magnet manufacturing.
-                    </p>
-                  </li>
-                </ul>
-              </div>
-
-              <div className={styles.demoFooter}>
-                <button type="button" className={styles.demoShare}>
-                  <span className={styles.demoShareIcon} aria-hidden>
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M6.667 5.333 10 2m0 0H6.667M10 2v3.333"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M6.333 3.333H4.667A2.667 2.667 0 0 0 2 6v4A2.667 2.667 0 0 0 4.667 12.667h4A2.667 2.667 0 0 0 11.333 10v-1.666"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </span>
-                  Share
-                </button>
-                <div className={styles.demoMetric}>
-                  <span className={styles.demoMetricIcon} aria-hidden>
-                    <svg
-                      width="20"
-                      height="20"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <defs>
-                        <linearGradient id="demoDiamond" x1="0" y1="0" x2="1" y2="1">
-                          <stop offset="0%" stopColor="#0266FF" />
-                          <stop offset="100%" stopColor="#5C54FF" />
-                        </linearGradient>
-                      </defs>
-                      <path
-                        d="M10 2.5 16.5 8.5 10 17.5 3.5 8.5 10 2.5Z"
-                        fill="url(#demoDiamond)"
-                        stroke="#E5ECFF"
-                        strokeWidth="1.1"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="m3.5 8.5 6.5 3 6.5-3M10 2.5l-2 6 2 9 2-9-2-6Z"
-                        stroke="rgba(255,255,255,0.65)"
-                        strokeWidth="0.9"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </span>
-                  <div>
-                    <span className={styles.demoMetricValue}>368</span>
-                    <span className={styles.demoMetricLabel}>AI watchers</span>
+                {/* 右侧：Performance 指标 */}
+                <div className={styles.demoPerformance}>
+                  {/* 上部分：绿色背景 + 图标 + +1.5% */}
+                  <div className={styles.demoPerformanceTop}>
+                    <div className={styles.demoPerformanceIcon}>
+                      <div className={styles.demoPerformanceIconInner}>
+                        <img src="/svg/arrows.svg" alt="" />
+                      </div>
+                    </div>
+                    <div className={styles.demoPerformanceValue}>+1.5%</div>
                   </div>
+                  {/* 下部分：Performance 文字 */}
+                  <div className={styles.demoPerformanceBottom}>
+                    <div className={styles.demoPerformanceLabel}>Performance</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* ========== 第四部分：Key Drivers ========== */}
+              <div className={styles.demoKeyDrivers}>
+                <div className={styles.demoKeyDriversTitle}>Key Drivers</div>
+                <div className={styles.demoKeyDriversList}>
+                  <div className={styles.demoKeyDriverItem}>
+                    <div className={styles.demoKeyDriverIcon}>
+                      <img src="/svg/file.svg" alt="" />
+                    </div>
+                    <div className={styles.demoKeyDriverContent}>
+                      <div className={styles.demoKeyDriverName}>Policy Support</div>
+                      <div className={styles.demoKeyDriverDesc}>
+                        Benefiting from the United States&apos; &quot;Domestic Supply&quot; policy, committed to establishing a rare earth magnet supply chain in the United States.
+                      </div>
+                    </div>
+                  </div>
+                  <div className={styles.demoKeyDriverItem}>
+                    <div className={styles.demoKeyDriverIcon}>
+                      <img src="/svg/chart.svg" alt="" />
+                    </div>
+                    <div className={styles.demoKeyDriverContent}>
+                      <div className={styles.demoKeyDriverName}>Demand Surge</div>
+                      <div className={styles.demoKeyDriverDesc}>
+                        Utilize local reserves to meet the growing demand for green energy (such as electric vehicles, wind turbines) and defense needs.
+                      </div>
+                    </div>
+                  </div>
+                  <div className={styles.demoKeyDriverItem}>
+                    <div className={styles.demoKeyDriverIcon}>
+                      <img src="/svg/shield.svg" alt="" />
+                    </div>
+                    <div className={styles.demoKeyDriverContent}>
+                      <div className={styles.demoKeyDriverName}>Market Position</div>
+                      <div className={styles.demoKeyDriverDesc}>
+                        The United States has a strong &quot;moat&quot; in the domestic rare earth extraction and magnet manufacturing fields.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* 分割线 */}
+              <div className={styles.demoDivider}></div>
+
+              {/* ========== 第五部分：底部操作栏 ========== */}
+              <div className={styles.demoFooter}>
+                <div className={styles.demoShare}>
+                  <div className={styles.demoShareIcon}>
+                    <img src="/svg/share.svg?v=2" alt="" />
+                  </div>
+                  <div className={styles.demoShareText}>Share</div>
+                </div>
+                <div className={styles.demoLikes}>
+                  <div className={styles.demoLikesIcon}>
+                    <img src="/svg/rocket.svg" alt="" />
+                  </div>
+                  <div className={styles.demoLikesCount}>368</div>
                 </div>
               </div>
             </div>
