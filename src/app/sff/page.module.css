@@ -82,10 +82,18 @@
   flex-wrap: wrap;
 }
 
+.festivalLogo {
+  animation: slideInLeft 0.8s ease-out;
+}
+
 .festivalLogo img {
   max-width: 360px;
   height: auto;
   display: block;
+}
+
+.goaiLogo {
+  animation: slideInRight 0.8s ease-out;
 }
 
 .goaiLogo img {
@@ -100,6 +108,41 @@
   font-weight: 300;
   line-height: 1;
   margin: 0 8px;
+  animation: fadeInScale 0.8s ease-out 0.3s backwards;
+}
+
+/* Logo animations */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0) rotate(180deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
 }
 
 /* Chip/Tag */
