@@ -1,6 +1,7 @@
 .technology {
-  padding: 30px 0;
-  background-color: var(--bg-secondary);
+  padding: 90px 0 110px;
+  background: radial-gradient(circle at top, rgba(0, 133, 255, 0.25), transparent 55%),
+    var(--bg-secondary);
 }
 
 .container {
@@ -11,51 +12,167 @@
 
 .featureRow {
   display: flex;
-  align-items: center;
-  gap: 50px;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 60px;
 }
 
 .featureText {
   flex: 1;
+  max-width: 520px;
+  padding: 0 0 10px;
 }
 
 .featureText h3 {
-  font-size: 2.2em;
-  color: var(--heading-color);
-  margin-top: 0;
-  margin-bottom: 15px;
+  font-size: 2.4em;
+  margin: 0 0 18px;
+  letter-spacing: 0.01em;
+  background: linear-gradient(110deg, #5fdcff, #b888ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 18px 36px rgba(0, 0, 0, 0.45);
 }
 
-.featureText p {
-  color: var(--text-color);
+.lede {
+  color: rgba(226, 235, 255, 0.9);
   font-size: 1.05em;
-  line-height: 1.7;
+  line-height: 1.8;
+  margin-bottom: 18px;
 }
 
 .featureImage {
   flex: 1;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.graphCard {
+  position: relative;
+  padding: 26px;
+  border-radius: 26px;
+  background: linear-gradient(125deg, rgba(10, 18, 40, 0.95), rgba(29, 52, 95, 0.85));
+  border: 1px solid rgba(98, 236, 255, 0.3);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+}
+
+.graphCard::before {
+  content: '';
+  position: absolute;
+  inset: 18px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+}
+
+.graphPulse {
+  position: absolute;
+  inset: 8px;
+  border-radius: 22px;
+  border: 1px dashed rgba(111, 216, 255, 0.4);
+  animation: graphPulse 6s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes graphPulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.4;
+  }
+  70% {
+    transform: scale(1.05);
+    opacity: 0.1;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.4;
+  }
 }
 
 .heroImage {
+  width: 520px;
   max-width: 100%;
-  border-radius: 12px;
-  box-shadow: var(--card-shadow);
-  border: 1px solid var(--border-glass);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.5);
+  display: block;
+}
+
+.graphBadge {
+  position: absolute;
+  top: 22px;
+  left: 26px;
+  padding: 6px 18px;
+  border-radius: 999px;
+  font-size: 0.88em;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  color: var(--heading-color);
+}
+
+.graphBadge::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: rgba(2, 9, 24, 0.8);
+  z-index: -1;
+}
+
+.graphBadgeDot {
+  color: #ffffff;
+  font-size: 1.25em;
+  line-height: 1;
+}
+
+.graphBadgeText {
+  color: transparent;
+  letter-spacing: 0.08em;
+  background-image: linear-gradient(95deg, #14B9FF 0%, #004EFF 55%, #A048FF 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.graphMeta {
+  position: absolute;
+  bottom: 26px;
+  right: 26px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 18px;
+  border-radius: 14px;
+  background: rgba(10, 17, 40, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+  font-size: 0.75em;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.graphMetaText {
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(226, 235, 255, 0.8);
 }
 
 @media (max-width: 768px) {
-  .technology {
-    padding: 20px 0;
-  }
-
   .featureRow {
     flex-direction: column;
-    gap: 30px;
+    gap: 40px;
   }
 
   .featureText {
     text-align: center;
+    padding: 0;
   }
 
   .featureText h3 {
